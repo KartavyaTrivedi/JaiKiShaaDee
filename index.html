@@ -10,13 +10,18 @@ p {
   font-size: 60px;
   margin-top: 0px;
   color: #707555;
-}body {
+}
+.background-pic {
   text-align: center;
   background-image: url("https://cdn.discordapp.com/attachments/633326400715227156/852411968504463411/Jai2.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-color: #707555;
   
+}
+.background {
+  text-align: center;
+  background-color: #707555;
 }
 h1{
   font-family: 'Tangerine', cursive;
@@ -46,11 +51,11 @@ h1{
 }
 #floatbutton {
   padding: 15px 24px;
-  background-color: #717556;
+  background-color: #798061;
 }
 </style>
 </head>
-<body>
+<body id="body" class="background-pic">
   <div id="floatbutton-container">
     <input type="button" value="View Live Stream" id="floatbutton" onclick="buttonClick();" />
   </div>
@@ -98,6 +103,7 @@ h1{
     }
   }, 1000);
 
+  var body = document.getElementById("body");
   var home = document.getElementById("home");
   var livestream = document.getElementById("livestream");
   var floatbutton = document.getElementById("floatbutton");
@@ -107,6 +113,7 @@ h1{
     home.className = state ? "hidden" : "";
     livestream.className = !state ? "hidden" : "";
     floatbutton.value = state ? "View Countdown" : "View Live Stream";
+    body.className = state ? "background" : "background-pic";
     state = !state;
   }
 
